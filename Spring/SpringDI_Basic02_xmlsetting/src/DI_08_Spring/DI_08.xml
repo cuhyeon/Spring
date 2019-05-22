@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+   <!--  
+   		IOC 컨테이너 (Spring 전용 메모리 공간) 안에  생성될 [객체 만들고 조립(의존)] 설정
+   		>> xml 문서 또는 annotation
+   		>> DI_03.xml
+   		
+   		:제어의 역전(프로그램의 제어구조를 바꾼다)
+   		:작은단위의 부품을 만들어 놓고 그 것을 조립하는 행의 (레고 블럭)
+		
+		java 코드
+		JobExecute jobexecute = new JobExecute("hong", 100L);
+		
+		case : String, String : String, int : String, long
+		
+		ArticleDao articledao = new ArticleDao();
+		jobexecute.setArticledao(articledao); //setter 주입 (참조값)
+		jobexecute.setData(500); //setter 주입(값)
+		
+  -->
+  		<bean id="articleDao" class="DI_08_Spring.ArticleDao"></bean>
+  		<bean id="jobExecute" class="DI_08_Spring.JobExecute">
+  			<constructor-arg><value>hong</value></constructor-arg>
+  			<constructor-arg><value type="long">100</value></constructor-arg>
+  		
+  			<property name="articledao">
+  				<ref bean="articleDao"/>
+  			</property>
+
+  			<property name="data">
+  				<value>500</value>
+  			</property>
+  		
+  		</bean>
+  
+</beans>   
+
+
+
+
+
+
+
+
+
+
+     

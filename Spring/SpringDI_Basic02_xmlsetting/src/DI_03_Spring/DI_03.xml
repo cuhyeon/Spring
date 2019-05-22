@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		IOC 컨테이너 (Spring 전용 메모리 공간) 안에 생성될 [객체 만들고 조립(의존)] 설정
+		>> xml 문서 또는 annotation
+		>> DIConfig.xml
+		
+		:제어의 역전(프로그램의 제어구조를 바꾼다)
+		:작은 단위의 부품을 만들어 놓고 그것을 조립하는 행의 (마치 레고 블럭)
+		
+		MessageBean_en messagebean_en = new MessageBean_en();
+		MessageBean_kr messagebean_kr = new MessageBean_kr();
+		
+		main 함수 받아주는 부분
+		MessageBean messagebean = new MessageBean_en();
+		
+	 -->
+	 
+	<!--  <bean id="message" class="DI_03_Spring.MessageBean_en"></bean> -->
+	 <bean id="message" class="DI_03_Spring.MessageBean_kr"></bean>
+	
+</beans>

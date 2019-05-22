@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           https://www.springframework.org/schema/context/spring-context.xsd">
+   <!--  
+   		IOC 컨테이너 (Spring 전용 메모리 공간) 안에  생성될 [객체 만들고 조립(의존)] 설정
+   		>> xml 문서 또는 annotation
+   		>> DI_11.xml
+   		
+   		:제어의 역전(프로그램의 제어구조를 바꾼다)
+   		:작은단위의 부품을 만들어 놓고 그 것을 조립하는 행의 (레고 블럭)
+		
+		1.DataSourceFactory 빈객체
+		2.properties 파일을 read 해서 
+		3.DataSourceFactory setter 통해서 read 한 값을 주입
+		
+		KEY POINT
+		xml 설정 파일에서 특정 자원을 read 할려면 .. context 
+		
+		4. context 자원 사용 : 
+			xml 설정 : http://www.springframework.org/schema/context
+			xsd 문법 강제 ... 추가
+			context 접두어 요소 사용 가능
+			파일 기반 작업 : <context:property-placeholder
+			${key} > ${jdbc.driver} >> return >> com.mysql.jdbc.Driver
+	-->
+	
+	<context:property-placeholder location="classpath:DI_11_Spring/jdbc.properties"/> 
+	<bean id="dataSourceFactory" class="DI_11_Spring.DataSourceFactory">
+		<property name="jdbcDriver" value="${jdbc.driver}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>	
+	</bean>
+		
+	
+	
+</beans>   
+
+
+
+
+
+
+
+
+
+
+     

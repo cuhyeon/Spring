@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           https://www.springframework.org/schema/context/spring-context.xsd">
+   <!--  
+   		IOC 컨테이너 (Spring 전용 메모리 공간) 안에  생성될 [객체 만들고 조립(의존)] 설정
+   		>> xml 문서 또는 annotation
+   		>> DI_11.xml
+   		
+   		:제어의 역전(프로그램의 제어구조를 바꾼다)
+   		:작은단위의 부품을 만들어 놓고 그 것을 조립하는 행의 (레고 블럭)
+		
+		>>JAVA 코드
+		MonitorViewer viewer = new MonitorViewer();
+		Recorder recorder = new Recorder();
+		viewer.setRecorder(recorder);
+	-->
+	
+	<!--
+		
+	
+	-->
+	
+	
+	<context:annotation-config />
+	<bean id="viewer" class="DI_Annotation_03.MonitorViewer"></bean>
+<!-- 	<bean id="recorder" class="DI_Annotation_03.Recorder"></bean> -->
+	
+</beans>   
+
+
+
+
+
+
+
+
+
+
+     
